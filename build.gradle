@@ -62,31 +62,14 @@ dependencies {
 
 jib {
 
-//String env = project.getProperty("prop")
-
-	// 	delete 'build'
-	// doLast {
-	// 	copy {
-	// 		from('src/main/resources') {
-	// 			include "*-${environment}.*"
-	// 		}
-	// 		into('build/resources/main')
-	// 		into ('src/main/resources')
-
-	// 		rename { String fileName ->
-	// 			fileName.replace('-' + environment, '')
-	// 		}
-	// 	}
-	// }
-
-from {
+ from {
     image = 'openjdk:alpine'
-  }
-  to {
-    image = '987429592769.dkr.ecr.ap-south-1.amazonaws.com/addepar/poc:parameter'
+    }
+ to {
+    image = '987429592769.dkr.ecr.ap-south-1.amazonaws.com/mydockerrepo:latest'
     credHelper = 'ecr-login'
-    //tags = [env]
   }
+
   container {
     jvmFlags = ['-Penvironment=dev', '-Xms512m', '-Xdebug']
     mainClass = 'mypackage.MyApp'
@@ -97,19 +80,3 @@ from {
   }
 }
 
-// task profileSetup {
-// 	delete 'build'
-// 	doLast {
-// 		copy {
-// 			from('src/main/resources') {
-// 				include "*-${environment}.*"
-// 			}
-// 			into('build/resources/main')
-// 			into ('src/main/resources')
-
-// 			rename { String fileName ->
-// 				fileName.replace('-' + environment, '')
-// 			}
-// 		}
-// 	}
-// }
