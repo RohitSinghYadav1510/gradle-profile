@@ -62,7 +62,7 @@ dependencies {
 
 jib {
  
-  String env = System.getProperty("mymessage") ? System.getProperty("mymessage") : 'no message'
+  String env = System.getProperty("mymessage") //? System.getProperty("mymessage") : 'no message'
 
  from {
     image = 'openjdk:alpine'
