@@ -61,12 +61,15 @@ dependencies {
  */
 
 jib {
+ 
+  String env = System.getProperties("e")
 
  from {
     image = 'openjdk:alpine'
     }
  to {
-    image = '987429592769.dkr.ecr.ap-south-1.amazonaws.com/mydockerrepo:latest'
+    image = '987429592769.dkr.ecr.ap-south-1.amazonaws.com/mydockerrepo'
+    tags = [env]
     credHelper = 'ecr-login'
   }
 
