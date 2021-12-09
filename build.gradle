@@ -59,10 +59,8 @@ dependencies {
 /**
  * This task copies content of properties file mentioned in command and saves it to application.properties in src directory as well as in build directory.
  */
-static def envq() {
-  String env = System.getProperty("mymessage")
-  return env
-}
+
+String env = System.getProperty("mymessage")
 
 jib {
  
@@ -72,7 +70,7 @@ jib {
     image = 'openjdk:alpine'
     }
  to {
-    image = '987429592769.dkr.ecr.ap-south-1.amazonaws.com/mydockerrepo:'.envq()
+    image = "987429592769.dkr.ecr.ap-south-1.amazonaws.com/mydockerrepo:${env}"
     //tags = [env]
     credHelper = 'ecr-login'
   }
