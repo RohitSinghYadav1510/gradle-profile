@@ -73,11 +73,11 @@ jib {
   }
 
   container {
-    jvmFlags = ['-Penvironment=dev', '-Xms512m', '-Xdebug']
-    mainClass = 'mypackage.MyApp'
+    jvmFlags = ['-Xms512m', '-Xdebug']
+    mainClass = 'com.example.gradleprofile'
     //args = [env]
     //ports = ['1000', '2000-2003/udp']
-    labels = [key2:'value2']
+    //labels = [key2:'value2']
     //format = 'OCI'
   }
 }
