@@ -63,15 +63,12 @@ dependencies {
 String env = System.getProperty("mymessage")
 
 jib {
- 
-  //String env = System.getProperty("mymessage")
 
  from {
     image = 'openjdk:alpine'
     }
  to {
-    image = "987429592769.dkr.ecr.ap-south-1.amazonaws.com/mydockerrepo:${env}"
-    //tags = [env]
+    image = "987429592769.dkr.ecr.ap-south-1.amazonaws.com/teamcity:${env}"
     credHelper = 'ecr-login'
   }
 
